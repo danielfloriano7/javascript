@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Numero</title>
+
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, rgb(8, 156, 255), blue);
+            background-attachment: fixed;
+        }
+        main {
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 500px;
+            height: 300px;
+            background-color: rgb(92, 190, 247);
+            text-align: center;
+            border-radius: 20px;
+            border: 3px solid darkblue;
+            
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        select {
+            border: 1px solid black ;
+            border-radius: 30%;
+            padding: 3px;
+            width: 40px;
+            height: 25px;
+            
+            text-align: center;
+            
+        }
+
+        input, select, main,div {
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.425);
+        }
+
+        input {
+            width: 60px;
+            margin: 7px;
+            border-radius: 7px;
+            height: 20px;
+        }
+
+        input#exer {
+            width: 70px;
+            height: 25px;
+        }
+
+        input#txn1, input#txn2 {
+            padding: 3px;
+            
+        }
+
+        input:focus {
+         outline: 0;   
+        }
+
+        div#res {
+            background-color: white;
+            width: 180px;
+            height: 70px;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 18px auto;
+            padding: 2px;
+            line-height: 22px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Calculadora</h1>
+        <input type="number" name="txn1" id="txn1">
+
+        <select name="Escolha" id="conta">
+
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+
+        </select>
+
+        <input type="number" name="txn2" id="txn2"><br>
+        <input type="button" value="Executar" onclick="somar()" id="exer">
+        <div id="res">Resultado:</div>
+    </main>
+
+    <script>
+        
+        function somar() {
+            var tn1 = window.document.getElementById('txn1')
+            var tn2 = window.document.querySelector('input#txn2')
+          
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+
+            var res = document.getElementById('res')
+
+            var c = document.querySelector('#conta')
+            var conta = String(c.value)
+
+            if (conta == '+') {
+                var r = n1 + n2 
+            }
+            if (conta == '-') {
+                var r = n1 - n2
+            }
+            if (conta == '*') {
+                var r = n1 * n2
+            }
+            if (conta == '/') {
+                var r = n1 / n2
+            }
+            
+            res.innerHTML = `Resultado: <br> ${n1} ${conta} ${n2} é igual a <strong>${r}</strong>`
+        }
+
+    </script>
+</body>
+</html>

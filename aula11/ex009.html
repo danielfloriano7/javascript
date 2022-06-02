@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, rgb(30, 218, 30), green);
+            background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            width: 500px;
+            height: 300px;
+            background-color: rgb(93, 255, 93);
+            margin: auto;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        h1, p, div#res{
+            text-align: center;
+        }
+
+        p {
+            margin-top: 0;
+            line-height: 25px;
+        }
+
+        input#botao {
+            width: 30px;
+            height: 30px;
+            background-color: rgb(0, 81, 255);
+            color: white;
+            border-radius: 50%;
+            padding: 0%;
+            text-align: center;
+        }
+
+        input#botao:hover {
+            background-color: blue;
+        }
+
+        div#txt {
+            background-color: white;
+            width: 320px;
+            height: 150px;
+            margin: auto;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <main>
+        <h1>País</h1>
+
+        <div id="txt">
+            <p>Você é de qual país: <input type="text" name="pais" id="pais"> 
+            <br>
+            <input id="botao" type="button" onclick="saber()" value="OK"></p>
+            <div id="res"></div>
+        </div>
+    </main>
+
+    <script>
+        function saber() {
+            var pais = document.querySelector('#pais').value
+            var res = document.querySelector('#res')
+
+            if (pais =="Brasil" || pais == "BR") {
+                res.innerHTML = 'Você é <strong>Brasileiro</strong>'
+            } 
+            else {
+                res.innerHTML = ('Você é <strong>Estrangeiro</strong>')
+            }
+        }
+        
+    </script>
+</body>
+</html>

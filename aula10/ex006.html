@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento DOM</title>
+    <style>
+
+        div {
+            display: inline-block;
+            margin: 20px;
+        }
+        div#area, div#area2 {
+            font: normal 15pt Arial;
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        div#comCSS {
+            background-color: lightblue;
+            font: normal 15pt Arial;
+            color: black;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        div#comCSS:hover {
+            background-color: aqua;
+        }
+
+        div#comCSS:active {
+            background-color: aquamarine;
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> Interaja... </div>
+
+    <div id="area2">outra Area</div>
+
+    <div id="comCSS">com CSS</div>
+
+
+    <script> 
+        
+        var a = window.document.getElementById('area')
+
+        function clicar() {    
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+
+        function entrar() {
+            a.innerText = 'Entrou!'
+        }
+
+        function sair() {
+            a.innerText = 'Saiu!'
+        }
+
+        var b =  window.document.getElementById('area2')
+        b.addEventListener('click', clicar2)
+        b.addEventListener('mouseenter', entrar2)
+        b.addEventListener('mouseout', sair2)
+
+        function clicar2() {    
+            b.innerText = 'Clicou!'
+        }
+
+        function entrar2() {
+            b.innerText = 'Entrou!'
+        }
+
+        function sair2() {
+            b.innerText = 'Saiu!'
+        }
+    </script>
+</body>
+</html>
